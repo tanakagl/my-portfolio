@@ -1,4 +1,261 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Home() {
+  const [language, setLanguage] = useState<'en' | 'pt'>('en');
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'pt' : 'en');
+  };
+
+  const t = {
+    en: {
+      nav: {
+        about: 'About',
+        experience: 'Experience',
+        skills: 'Skills',
+        projects: 'Projects',
+        contact: 'Contact'
+      },
+      hero: {
+        greeting: "Hi, I'm",
+        title: 'Computer Engineer | Full-Stack Developer',
+        subtitle: '.NET, React, and Angular Specialist',
+        cta: 'Get In Touch'
+      },
+      about: {
+        title: 'About Me',
+        p1: 'Computer Engineer graduated from UFMT, specialized in .NET (C#), React.js and Angular, with solid experience in full-stack development and modern software architecture.',
+        p2: 'Strong expertise in CQRS, Hexagonal Architecture, and Clean Architecture. Hands-on experience in modernizing legacy systems, integrating AI with Semantic Kernel, and delivering scalable, high-performance corporate platforms.',
+        p3: 'Recognized for leading development teams and delivering solutions that replace complex legacy systems with modern applications, optimizing costs and increasing productivity.'
+      },
+      experience: {
+        title: 'Professional Experience',
+        present: 'Present',
+        amaggi: {
+          role: 'Systems Development Analyst',
+          company: 'Amaggi',
+          items: [
+            'Developed new features for international export and agricultural credit systems using .NET and React 19',
+            'Created and maintained microservices in .NET 8, with automated execution via crontab',
+            'Managed logs and data persistence in MongoDB and Oracle',
+            'Modernized legacy system using modular architecture based on Hexagonal Architecture'
+          ]
+        },
+        agenda: {
+          role: 'Systems Development Analyst',
+          company: 'Agenda Assessoria',
+          items: [
+            'Technical lead for Sisprev+ project, developed in .NET 9 and React 19 using CQRS architecture',
+            'Unified three legacy systems into a single modern solution',
+            'Integrated corporate AI with Semantic Kernel for automation and intelligent data analysis',
+            'Developed complex modules with React.js, Angular, and modern libraries (Zustand, TanStack, Zod)'
+          ]
+        },
+        silo: {
+          role: 'Freelance Web Developer',
+          company: 'Silo - Arte e Latitude Rural',
+          items: [
+            'Contributing to the development and maintenance of the organization\'s website at silo.org.br',
+            'Working with Jekyll, HTML, SCSS, and JavaScript for a rural art and culture organization',
+            'Implementing responsive design and modern web standards for improved user experience'
+          ]
+        },
+        connet: {
+          role: 'Freelance .NET / C# Developer',
+          company: 'ConnetGroup',
+          items: [
+            'Developed new features and maintained systems in .NET with C# using MVC architecture',
+            'Bug fixes and performance improvements for governmental and private clients including SESI',
+            'Ensured code quality with Clean Code practices, Git version control, and unit testing'
+          ]
+        },
+        simples: {
+          role: 'Software Developer',
+          company: 'Simples IP',
+          items: [
+            'Developed multi-tenant PABX system with scalable architecture in PHP, reducing hosting costs',
+            'Built modern interfaces using React.js and Angular integrated with PHP backend',
+            'Developed WebRTC softphone with secure connections and high-quality audio'
+          ]
+        }
+      },
+      skills: {
+        title: 'Technical Skills',
+        languages: 'Languages',
+        frontend: 'Frontend',
+        backend: 'Backend',
+        databases: 'Databases',
+        architecture: 'Architecture',
+        aiTools: 'AI & Tools'
+      },
+      projects: {
+        title: 'Highlighted Projects',
+        sisprev: {
+          title: 'Sisprev+',
+          description: 'Modern pension management system built with React 19, .NET 9, and CQRS architecture. Successfully replaced three legacy systems into a unified, scalable solution.'
+        },
+        webrtc: {
+          title: 'WebRTC Softphone',
+          description: 'Real-time communication application via WebSocket with modern codecs and secure architecture. Features high-quality audio and secure connections for enterprise use.'
+        },
+        pabx: {
+          title: 'Multi-Tenant PABX',
+          description: 'Scalable solution for multiple simultaneous clients with modern interfaces built in React and Angular, significantly reducing operational costs.'
+        },
+        ai: {
+          title: 'AI Integration',
+          description: 'Corporate AI solutions using Semantic Kernel and language models for intelligent automation and data analysis.'
+        }
+      },
+      achievements: {
+        title: 'Key Achievements',
+        items: [
+          'Unified three legacy systems into a single modern solution using .NET and React',
+          'Implemented CQRS and Hexagonal Architecture for high performance and maintainability',
+          'Integrated Semantic Kernel for intelligent automation and data analysis',
+          'Modernized legacy systems at Amaggi and Agenda using Clean Architecture',
+          'Developed WebRTC Softphone with secure communication and high-quality audio',
+          'Author of the Makiphone article, published in SBC and presented at ERI-MT 2024'
+        ]
+      },
+      contact: {
+        title: "Let's Work Together",
+        subtitle: "I'm always interested in hearing about new projects and opportunities.",
+        viewGithub: 'View GitHub',
+        viewLinkedin: 'View LinkedIn'
+      },
+      footer: {
+        rights: '© 2025 Matheo Bonucia. Built with Next.js and Tailwind CSS.',
+        tagline: 'Computer Engineer | .NET, React, and Angular Specialist'
+      }
+    },
+    pt: {
+      nav: {
+        about: 'Sobre',
+        experience: 'Experiência',
+        skills: 'Habilidades',
+        projects: 'Projetos',
+        contact: 'Contato'
+      },
+      hero: {
+        greeting: 'Olá, eu sou',
+        title: 'Engenheiro da Computação | Desenvolvedor Full-Stack',
+        subtitle: 'Especialista em .NET, React e Angular',
+        cta: 'Entre em Contato'
+      },
+      about: {
+        title: 'Sobre Mim',
+        p1: 'Engenheiro da Computação formado pela UFMT, especializado em .NET (C#), React.js e Angular, com sólida experiência em desenvolvimento full-stack e arquitetura de software moderna.',
+        p2: 'Forte expertise em CQRS, Arquitetura Hexagonal e Clean Architecture. Experiência prática na modernização de sistemas legados, integração de IA com Semantic Kernel e entrega de plataformas corporativas escaláveis e de alto desempenho.',
+        p3: 'Reconhecido por liderar equipes de desenvolvimento e entregar soluções que substituem sistemas legados complexos por aplicações modernas, otimizando custos e aumentando a produtividade.'
+      },
+      experience: {
+        title: 'Experiência Profissional',
+        present: 'Atual',
+        amaggi: {
+          role: 'Analista de Desenvolvimento de Sistemas',
+          company: 'Amaggi',
+          items: [
+            'Desenvolvi novos recursos para sistemas de exportação internacional e crédito agrícola usando .NET e React 19',
+            'Criei e mantive microsserviços em .NET 8, com execução automatizada via crontab',
+            'Gerenciei logs e persistência de dados em MongoDB e Oracle',
+            'Modernizei sistema legado usando arquitetura modular baseada em Arquitetura Hexagonal'
+          ]
+        },
+        agenda: {
+          role: 'Analista de Desenvolvimento de Sistemas',
+          company: 'Agenda Assessoria',
+          items: [
+            'Líder técnico do projeto Sisprev+, desenvolvido em .NET 9 e React 19 usando arquitetura CQRS',
+            'Unifiquei três sistemas legados em uma única solução moderna',
+            'Integrei IA corporativa com Semantic Kernel para automação e análise inteligente de dados',
+            'Desenvolvi módulos complexos com React.js, Angular e bibliotecas modernas (Zustand, TanStack, Zod)'
+          ]
+        },
+        silo: {
+          role: 'Desenvolvedor Web Freelancer',
+          company: 'Silo - Arte e Latitude Rural',
+          items: [
+            'Contribuindo para o desenvolvimento e manutenção do site da organização em silo.org.br',
+            'Trabalhando com Jekyll, HTML, SCSS e JavaScript para uma organização de arte e cultura rural',
+            'Implementando design responsivo e padrões web modernos para melhor experiência do usuário'
+          ]
+        },
+        connet: {
+          role: 'Desenvolvedor .NET / C# Freelancer',
+          company: 'ConnetGroup',
+          items: [
+            'Desenvolvi novos recursos e mantive sistemas em .NET com C# usando arquitetura MVC',
+            'Correção de bugs e melhorias de desempenho para clientes governamentais e privados incluindo SESI',
+            'Garanti qualidade de código com práticas de Clean Code, controle de versão Git e testes unitários'
+          ]
+        },
+        simples: {
+          role: 'Desenvolvedor de Software',
+          company: 'Simples IP',
+          items: [
+            'Desenvolvi sistema PABX multi-tenant com arquitetura escalável em PHP, reduzindo custos de hospedagem',
+            'Construí interfaces modernas usando React.js e Angular integradas com backend PHP',
+            'Desenvolvi softphone WebRTC com conexões seguras e áudio de alta qualidade'
+          ]
+        }
+      },
+      skills: {
+        title: 'Habilidades Técnicas',
+        languages: 'Linguagens',
+        frontend: 'Frontend',
+        backend: 'Backend',
+        databases: 'Bancos de Dados',
+        architecture: 'Arquitetura',
+        aiTools: 'IA & Ferramentas'
+      },
+      projects: {
+        title: 'Projetos em Destaque',
+        sisprev: {
+          title: 'Sisprev+',
+          description: 'Sistema moderno de gestão previdenciária construído com React 19, .NET 9 e arquitetura CQRS. Substituiu com sucesso três sistemas legados em uma solução unificada e escalável.'
+        },
+        webrtc: {
+          title: 'Softphone WebRTC',
+          description: 'Aplicação de comunicação em tempo real via WebSocket com codecs modernos e arquitetura segura. Possui áudio de alta qualidade e conexões seguras para uso corporativo.'
+        },
+        pabx: {
+          title: 'PABX Multi-Tenant',
+          description: 'Solução escalável para múltiplos clientes simultâneos com interfaces modernas construídas em React e Angular, reduzindo significativamente os custos operacionais.'
+        },
+        ai: {
+          title: 'Integração de IA',
+          description: 'Soluções de IA corporativa usando Semantic Kernel e modelos de linguagem para automação inteligente e análise de dados.'
+        }
+      },
+      achievements: {
+        title: 'Principais Conquistas',
+        items: [
+          'Unifiquei três sistemas legados em uma única solução moderna usando .NET e React',
+          'Implementei CQRS e Arquitetura Hexagonal para alto desempenho e manutenibilidade',
+          'Integrei Semantic Kernel para automação inteligente e análise de dados',
+          'Modernizei sistemas legados na Amaggi e Agenda usando Clean Architecture',
+          'Desenvolvi Softphone WebRTC com comunicação segura e áudio de alta qualidade',
+          'Autor do artigo Makiphone, publicado na SBC e apresentado no ERI-MT 2024'
+        ]
+      },
+      contact: {
+        title: 'Vamos Trabalhar Juntos',
+        subtitle: 'Estou sempre interessado em ouvir sobre novos projetos e oportunidades.',
+        viewGithub: 'Ver GitHub',
+        viewLinkedin: 'Ver LinkedIn'
+      },
+      footer: {
+        rights: '© 2025 Matheo Bonucia. Desenvolvido com Next.js e Tailwind CSS.',
+        tagline: 'Engenheiro da Computação | Especialista em .NET, React e Angular'
+      }
+    }
+  };
+
+  const content = t[language];
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -6,12 +263,20 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="text-xl font-bold gradient-text">MB</div>
-            <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-gray-300 hover:text-purple-400 transition-colors">About</a>
-              <a href="#experience" className="text-gray-300 hover:text-purple-400 transition-colors">Experience</a>
-              <a href="#skills" className="text-gray-300 hover:text-purple-400 transition-colors">Skills</a>
-              <a href="#projects" className="text-gray-300 hover:text-purple-400 transition-colors">Projects</a>
-              <a href="#contact" className="text-gray-300 hover:text-purple-400 transition-colors">Contact</a>
+            <div className="flex items-center gap-6">
+              <div className="hidden md:flex space-x-8">
+                <a href="#about" className="text-gray-300 hover:text-purple-400 transition-colors">{content.nav.about}</a>
+                <a href="#experience" className="text-gray-300 hover:text-purple-400 transition-colors">{content.nav.experience}</a>
+                <a href="#skills" className="text-gray-300 hover:text-purple-400 transition-colors">{content.nav.skills}</a>
+                <a href="#projects" className="text-gray-300 hover:text-purple-400 transition-colors">{content.nav.projects}</a>
+                <a href="#contact" className="text-gray-300 hover:text-purple-400 transition-colors">{content.nav.contact}</a>
+              </div>
+              <button
+                onClick={toggleLanguage}
+                className="glass px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 hover:text-purple-300 transition-colors"
+              >
+                {language === 'en' ? '🇧🇷 PT' : '🇺🇸 EN'}
+              </button>
             </div>
           </div>
         </div>
@@ -22,13 +287,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-fadeInUp">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-              Hi, I&apos;m <span className="gradient-text">Matheo Bonucia</span>
+              {content.hero.greeting} <span className="gradient-text">Matheo Bonucia</span>
             </h1>
             <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-4">
-              Computer Engineer | Full-Stack Developer
+              {content.hero.title}
             </p>
             <p className="text-lg sm:text-xl text-purple-300 mb-8">
-              .NET, React, and Angular Specialist
+              {content.hero.subtitle}
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               <a
@@ -57,7 +322,7 @@ export default function Home() {
                 href="mailto:makicode.dev@gmail.com"
                 className="bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 rounded-lg hover-lift font-semibold"
               >
-                Get In Touch
+                {content.hero.cta}
               </a>
             </div>
           </div>
@@ -67,16 +332,28 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 gradient-text">About Me</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 gradient-text">{content.about.title}</h2>
           <div className="glass rounded-2xl p-8 md:p-12 hover-lift">
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              Computer Engineer graduated from <span className="text-purple-400 font-semibold">UFMT</span>, specialized in <span className="text-purple-400 font-semibold">.NET (C#)</span>, <span className="text-purple-400 font-semibold">React.js</span> and <span className="text-purple-400 font-semibold">Angular</span>, with solid experience in full-stack development and modern software architecture.
+              {language === 'en' ? (
+                <>Computer Engineer graduated from <span className="text-purple-400 font-semibold">UFMT</span>, specialized in <span className="text-purple-400 font-semibold">.NET (C#)</span>, <span className="text-purple-400 font-semibold">React.js</span> and <span className="text-purple-400 font-semibold">Angular</span>, with solid experience in full-stack development and modern software architecture.</>
+              ) : (
+                <>Engenheiro da Computação formado pela <span className="text-purple-400 font-semibold">UFMT</span>, especializado em <span className="text-purple-400 font-semibold">.NET (C#)</span>, <span className="text-purple-400 font-semibold">React.js</span> e <span className="text-purple-400 font-semibold">Angular</span>, com sólida experiência em desenvolvimento full-stack e arquitetura de software moderna.</>
+              )}
             </p>
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              Strong expertise in <span className="text-purple-400 font-semibold">CQRS</span>, <span className="text-purple-400 font-semibold">Hexagonal Architecture</span>, and <span className="text-purple-400 font-semibold">Clean Architecture</span>. Hands-on experience in modernizing legacy systems, integrating AI with Semantic Kernel, and delivering scalable, high-performance corporate platforms.
+              {language === 'en' ? (
+                <>Strong expertise in <span className="text-purple-400 font-semibold">CQRS</span>, <span className="text-purple-400 font-semibold">Hexagonal Architecture</span>, and <span className="text-purple-400 font-semibold">Clean Architecture</span>. Hands-on experience in modernizing legacy systems, integrating AI with Semantic Kernel, and delivering scalable, high-performance corporate platforms.</>
+              ) : (
+                <>Forte expertise em <span className="text-purple-400 font-semibold">CQRS</span>, <span className="text-purple-400 font-semibold">Arquitetura Hexagonal</span> e <span className="text-purple-400 font-semibold">Clean Architecture</span>. Experiência prática na modernização de sistemas legados, integração de IA com Semantic Kernel e entrega de plataformas corporativas escaláveis e de alto desempenho.</>
+              )}
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
-              Recognized for leading development teams and delivering solutions that replace complex legacy systems with modern applications, optimizing costs and increasing productivity.
+              {language === 'en' ? (
+                <>Recognized for leading development teams and delivering solutions that replace complex legacy systems with modern applications, optimizing costs and increasing productivity.</>
+              ) : (
+                <>Reconhecido por liderar equipes de desenvolvimento e entregar soluções que substituem sistemas legados complexos por aplicações modernas, otimizando custos e aumentando a produtividade.</>
+              )}
             </p>
           </div>
         </div>
@@ -85,34 +362,24 @@ export default function Home() {
       {/* Experience Section */}
       <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 gradient-text">Professional Experience</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 gradient-text">{content.experience.title}</h2>
           <div className="space-y-8">
             {/* Amaggi */}
             <div className="glass rounded-2xl p-6 md:p-8 hover-lift">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-purple-400">Systems Development Analyst</h3>
-                  <p className="text-xl text-gray-300">Amaggi</p>
+                  <h3 className="text-2xl font-bold text-purple-400">{content.experience.amaggi.role}</h3>
+                  <p className="text-xl text-gray-300">{content.experience.amaggi.company}</p>
                 </div>
-                <span className="text-gray-400 mt-2 md:mt-0">2025 - Present</span>
+                <span className="text-gray-400 mt-2 md:mt-0">2025 - {content.experience.present}</span>
               </div>
               <ul className="space-y-2 text-gray-300">
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Developed new features for international export and agricultural credit systems using <span className="text-purple-400 font-semibold">.NET</span> and <span className="text-purple-400 font-semibold">React 19</span></span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Created and maintained microservices in <span className="text-purple-400 font-semibold">.NET 8</span>, with automated execution via crontab</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Managed logs and data persistence in <span className="text-purple-400 font-semibold">MongoDB</span> and <span className="text-purple-400 font-semibold">Oracle</span></span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Modernized legacy system using modular architecture based on <span className="text-purple-400 font-semibold">Hexagonal Architecture</span></span>
-                </li>
+                {content.experience.amaggi.items.map((item, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">▹</span>
+                    <span dangerouslySetInnerHTML={{ __html: item.replace(/\.NET/g, '<span class="text-purple-400 font-semibold">.NET</span>').replace(/React 19/g, '<span class="text-purple-400 font-semibold">React 19</span>').replace(/\.NET 8/g, '<span class="text-purple-400 font-semibold">.NET 8</span>').replace(/MongoDB/g, '<span class="text-purple-400 font-semibold">MongoDB</span>').replace(/Oracle/g, '<span class="text-purple-400 font-semibold">Oracle</span>').replace(/Hexagonal Architecture|Arquitetura Hexagonal/g, '<span class="text-purple-400 font-semibold">$&</span>') }} />
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -120,28 +387,18 @@ export default function Home() {
             <div className="glass rounded-2xl p-6 md:p-8 hover-lift">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-purple-400">Systems Development Analyst</h3>
-                  <p className="text-xl text-gray-300">Agenda Assessoria</p>
+                  <h3 className="text-2xl font-bold text-purple-400">{content.experience.agenda.role}</h3>
+                  <p className="text-xl text-gray-300">{content.experience.agenda.company}</p>
                 </div>
                 <span className="text-gray-400 mt-2 md:mt-0">2024 - 2025</span>
               </div>
               <ul className="space-y-2 text-gray-300">
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Technical lead for <span className="text-purple-400 font-semibold">Sisprev+</span> project, developed in <span className="text-purple-400 font-semibold">.NET 9</span> and <span className="text-purple-400 font-semibold">React 19</span> using <span className="text-purple-400 font-semibold">CQRS architecture</span></span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Unified <span className="text-purple-400 font-semibold">three legacy systems</span> into a single modern solution</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Integrated corporate AI with <span className="text-purple-400 font-semibold">Semantic Kernel</span> for automation and intelligent data analysis</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Developed complex modules with React.js, Angular, and modern libraries (Zustand, TanStack, Zod)</span>
-                </li>
+                {content.experience.agenda.items.map((item, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">▹</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -149,24 +406,22 @@ export default function Home() {
             <div className="glass rounded-2xl p-6 md:p-8 hover-lift">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-purple-400">Freelance Web Developer</h3>
-                  <p className="text-xl text-gray-300">Silo - Arte e Latitude Rural</p>
+                  <h3 className="text-2xl font-bold text-purple-400">{content.experience.silo.role}</h3>
+                  <p className="text-xl text-gray-300">{content.experience.silo.company}</p>
                 </div>
-                <span className="text-gray-400 mt-2 md:mt-0">2025 - Present</span>
+                <span className="text-gray-400 mt-2 md:mt-0">2025 - {content.experience.present}</span>
               </div>
               <ul className="space-y-2 text-gray-300">
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Contributing to the development and maintenance of the organization&apos;s website at <a href="https://github.com/associacaosilo/silo.org.br" target="_blank" rel="noopener noreferrer" className="text-purple-400 font-semibold hover:text-purple-300 underline">silo.org.br</a></span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Working with <span className="text-purple-400 font-semibold">Jekyll</span>, <span className="text-purple-400 font-semibold">HTML</span>, <span className="text-purple-400 font-semibold">SCSS</span>, and <span className="text-purple-400 font-semibold">JavaScript</span> for a rural art and culture organization</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Implementing responsive design and modern web standards for improved user experience</span>
-                </li>
+                {content.experience.silo.items.map((item, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">▹</span>
+                    {index === 0 ? (
+                      <span>{language === 'en' ? 'Contributing to the development and maintenance of the organization\'s website at' : 'Contribuindo para o desenvolvimento e manutenção do site da organização em'} <a href="https://github.com/associacaosilo/silo.org.br" target="_blank" rel="noopener noreferrer" className="text-purple-400 font-semibold hover:text-purple-300 underline">silo.org.br</a></span>
+                    ) : (
+                      <span>{item}</span>
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -174,24 +429,18 @@ export default function Home() {
             <div className="glass rounded-2xl p-6 md:p-8 hover-lift">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-purple-400">Freelance .NET / C# Developer</h3>
-                  <p className="text-xl text-gray-300">ConnetGroup</p>
+                  <h3 className="text-2xl font-bold text-purple-400">{content.experience.connet.role}</h3>
+                  <p className="text-xl text-gray-300">{content.experience.connet.company}</p>
                 </div>
-                <span className="text-gray-400 mt-2 md:mt-0">2024 - Present</span>
+                <span className="text-gray-400 mt-2 md:mt-0">2024 - {content.experience.present}</span>
               </div>
               <ul className="space-y-2 text-gray-300">
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Developed new features and maintained systems in <span className="text-purple-400 font-semibold">.NET</span> with <span className="text-purple-400 font-semibold">C#</span> using <span className="text-purple-400 font-semibold">MVC architecture</span></span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Bug fixes and performance improvements for governmental and private clients including <span className="text-purple-400 font-semibold">SESI</span></span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Ensured code quality with Clean Code practices, Git version control, and unit testing</span>
-                </li>
+                {content.experience.connet.items.map((item, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">▹</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -199,24 +448,18 @@ export default function Home() {
             <div className="glass rounded-2xl p-6 md:p-8 hover-lift">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-purple-400">Software Developer</h3>
-                  <p className="text-xl text-gray-300">Simples IP</p>
+                  <h3 className="text-2xl font-bold text-purple-400">{content.experience.simples.role}</h3>
+                  <p className="text-xl text-gray-300">{content.experience.simples.company}</p>
                 </div>
                 <span className="text-gray-400 mt-2 md:mt-0">2023 - 2024</span>
               </div>
               <ul className="space-y-2 text-gray-300">
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Developed multi-tenant <span className="text-purple-400 font-semibold">PABX system</span> with scalable architecture in PHP, reducing hosting costs</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Built modern interfaces using <span className="text-purple-400 font-semibold">React.js</span> and <span className="text-purple-400 font-semibold">Angular</span> integrated with PHP backend</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  <span>Developed <span className="text-purple-400 font-semibold">WebRTC softphone</span> with secure connections and high-quality audio</span>
-                </li>
+                {content.experience.simples.items.map((item, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">▹</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -226,10 +469,10 @@ export default function Home() {
       {/* Skills Section */}
       <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 gradient-text">Technical Skills</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 gradient-text">{content.skills.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="glass rounded-xl p-6 hover-lift">
-              <h3 className="text-xl font-bold text-purple-400 mb-4">Languages</h3>
+              <h3 className="text-xl font-bold text-purple-400 mb-4">{content.skills.languages}</h3>
               <div className="flex flex-wrap gap-2">
                 {['C#', 'TypeScript', 'JavaScript', 'PHP', 'SQL'].map((skill) => (
                   <span key={skill} className="bg-purple-500/20 px-3 py-1 rounded-full text-sm">{skill}</span>
@@ -238,7 +481,7 @@ export default function Home() {
             </div>
 
             <div className="glass rounded-xl p-6 hover-lift">
-              <h3 className="text-xl font-bold text-purple-400 mb-4">Frontend</h3>
+              <h3 className="text-xl font-bold text-purple-400 mb-4">{content.skills.frontend}</h3>
               <div className="flex flex-wrap gap-2">
                 {['React.js', 'Angular', 'Vue.js', 'React Native', 'HTML5', 'CSS3', 'Bootstrap'].map((skill) => (
                   <span key={skill} className="bg-purple-500/20 px-3 py-1 rounded-full text-sm">{skill}</span>
@@ -247,7 +490,7 @@ export default function Home() {
             </div>
 
             <div className="glass rounded-xl p-6 hover-lift">
-              <h3 className="text-xl font-bold text-purple-400 mb-4">Backend</h3>
+              <h3 className="text-xl font-bold text-purple-400 mb-4">{content.skills.backend}</h3>
               <div className="flex flex-wrap gap-2">
                 {['.NET Core', '.NET 10', '.NET 9', 'ASP.NET MVC', 'Web APIs', 'RESTful', 'GraphQL'].map((skill) => (
                   <span key={skill} className="bg-purple-500/20 px-3 py-1 rounded-full text-sm">{skill}</span>
@@ -256,7 +499,7 @@ export default function Home() {
             </div>
 
             <div className="glass rounded-xl p-6 hover-lift">
-              <h3 className="text-xl font-bold text-purple-400 mb-4">Databases</h3>
+              <h3 className="text-xl font-bold text-purple-400 mb-4">{content.skills.databases}</h3>
               <div className="flex flex-wrap gap-2">
                 {['PostgreSQL', 'SQL Server', 'Oracle', 'MongoDB', 'Entity Framework', 'Dapper'].map((skill) => (
                   <span key={skill} className="bg-purple-500/20 px-3 py-1 rounded-full text-sm">{skill}</span>
@@ -265,7 +508,7 @@ export default function Home() {
             </div>
 
             <div className="glass rounded-xl p-6 hover-lift">
-              <h3 className="text-xl font-bold text-purple-400 mb-4">Architecture</h3>
+              <h3 className="text-xl font-bold text-purple-400 mb-4">{content.skills.architecture}</h3>
               <div className="flex flex-wrap gap-2">
                 {['CQRS', 'Hexagonal', 'Clean Architecture', 'Microservices', 'Multi-tenant', 'DDD'].map((skill) => (
                   <span key={skill} className="bg-purple-500/20 px-3 py-1 rounded-full text-sm">{skill}</span>
@@ -274,7 +517,7 @@ export default function Home() {
             </div>
 
             <div className="glass rounded-xl p-6 hover-lift">
-              <h3 className="text-xl font-bold text-purple-400 mb-4">AI & Tools</h3>
+              <h3 className="text-xl font-bold text-purple-400 mb-4">{content.skills.aiTools}</h3>
               <div className="flex flex-wrap gap-2">
                 {['Semantic Kernel', 'OpenAI API', 'WebRTC', 'Git', 'DevOps', 'Scrum'].map((skill) => (
                   <span key={skill} className="bg-purple-500/20 px-3 py-1 rounded-full text-sm">{skill}</span>
@@ -288,12 +531,12 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 gradient-text">Highlighted Projects</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 gradient-text">{content.projects.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="glass rounded-2xl p-6 hover-lift">
-              <h3 className="text-2xl font-bold text-purple-400 mb-3">Sisprev+</h3>
+              <h3 className="text-2xl font-bold text-purple-400 mb-3">{content.projects.sisprev.title}</h3>
               <p className="text-gray-300 mb-4">
-                Modern pension management system built with <span className="text-purple-400 font-semibold">React 19</span>, <span className="text-purple-400 font-semibold">.NET 9</span>, and <span className="text-purple-400 font-semibold">CQRS architecture</span>. Successfully replaced three legacy systems into a unified, scalable solution.
+                {content.projects.sisprev.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="bg-purple-500/20 px-3 py-1 rounded-full text-xs">React 19</span>
@@ -304,9 +547,9 @@ export default function Home() {
             </div>
 
             <div className="glass rounded-2xl p-6 hover-lift">
-              <h3 className="text-2xl font-bold text-purple-400 mb-3">WebRTC Softphone</h3>
+              <h3 className="text-2xl font-bold text-purple-400 mb-3">{content.projects.webrtc.title}</h3>
               <p className="text-gray-300 mb-4">
-                Real-time communication application via WebSocket with modern codecs and secure architecture. Features high-quality audio and secure connections for enterprise use.
+                {content.projects.webrtc.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="bg-purple-500/20 px-3 py-1 rounded-full text-xs">WebRTC</span>
@@ -317,9 +560,9 @@ export default function Home() {
             </div>
 
             <div className="glass rounded-2xl p-6 hover-lift">
-              <h3 className="text-2xl font-bold text-purple-400 mb-3">Multi-Tenant PABX</h3>
+              <h3 className="text-2xl font-bold text-purple-400 mb-3">{content.projects.pabx.title}</h3>
               <p className="text-gray-300 mb-4">
-                Scalable solution for multiple simultaneous clients with modern interfaces built in React and Angular, significantly reducing operational costs.
+                {content.projects.pabx.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="bg-purple-500/20 px-3 py-1 rounded-full text-xs">PHP</span>
@@ -330,15 +573,15 @@ export default function Home() {
             </div>
 
             <div className="glass rounded-2xl p-6 hover-lift">
-              <h3 className="text-2xl font-bold text-purple-400 mb-3">AI Integration</h3>
+              <h3 className="text-2xl font-bold text-purple-400 mb-3">{content.projects.ai.title}</h3>
               <p className="text-gray-300 mb-4">
-                Corporate AI solutions using <span className="text-purple-400 font-semibold">Semantic Kernel</span> and language models for intelligent automation and data analysis.
+                {content.projects.ai.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="bg-purple-500/20 px-3 py-1 rounded-full text-xs">Semantic Kernel</span>
                 <span className="bg-purple-500/20 px-3 py-1 rounded-full text-xs">OpenAI</span>
                 <span className="bg-purple-500/20 px-3 py-1 rounded-full text-xs">.NET</span>
-                <span className="bg-purple-500/20 px-3 py-1 rounded-full text-xs">AI</span>
+                <span className="bg-purple-500/20 px-3 py-1 rounded-full text-xs">{language === 'en' ? 'AI' : 'IA'}</span>
               </div>
             </div>
           </div>
@@ -348,16 +591,9 @@ export default function Home() {
       {/* Achievements Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 gradient-text">Key Achievements</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 gradient-text">{content.achievements.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              'Unified three legacy systems into a single modern solution using .NET and React',
-              'Implemented CQRS and Hexagonal Architecture for high performance and maintainability',
-              'Integrated Semantic Kernel for intelligent automation and data analysis',
-              'Modernized legacy systems at Amaggi and Agenda using Clean Architecture',
-              'Developed WebRTC Softphone with secure communication and high-quality audio',
-              'Author of the Makiphone article, published in SBC and presented at ERI-MT 2024'
-            ].map((achievement, index) => (
+            {content.achievements.items.map((achievement, index) => (
               <div key={index} className="glass rounded-xl p-6 hover-lift flex items-start gap-4">
                 <div className="text-purple-400 text-2xl font-bold">✓</div>
                 <p className="text-gray-300">{achievement}</p>
@@ -370,9 +606,9 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-8 gradient-text">Let&apos;s Work Together</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-8 gradient-text">{content.contact.title}</h2>
           <p className="text-xl text-gray-300 mb-8">
-            I&apos;m always interested in hearing about new projects and opportunities.
+            {content.contact.subtitle}
           </p>
           <div className="glass rounded-2xl p-8 md:p-12">
             <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
@@ -388,7 +624,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                Brazil
+                {language === 'en' ? 'Brazil' : 'Brasil'}
               </div>
             </div>
             <div className="flex flex-wrap justify-center gap-4">
@@ -398,7 +634,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-3 rounded-lg hover-lift font-semibold"
               >
-                View GitHub
+                {content.contact.viewGithub}
               </a>
               <a
                 href="https://linkedin.com/in/matheorb"
@@ -406,7 +642,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-3 rounded-lg hover-lift font-semibold"
               >
-                View LinkedIn
+                {content.contact.viewLinkedin}
               </a>
             </div>
           </div>
@@ -417,10 +653,10 @@ export default function Home() {
       <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-purple-500/20">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-gray-400">
-            © 2025 Matheo Bonucia. Built with Next.js and Tailwind CSS.
+            {content.footer.rights}
           </p>
           <p className="text-gray-500 text-sm mt-2">
-            Computer Engineer | .NET, React, and Angular Specialist
+            {content.footer.tagline}
           </p>
         </div>
       </footer>
