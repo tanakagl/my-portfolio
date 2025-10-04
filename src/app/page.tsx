@@ -109,6 +109,18 @@ export default function Home() {
           description: 'Corporate AI solutions using Semantic Kernel and language models for intelligent automation and data analysis.'
         }
       },
+      publications: {
+        title: 'Academic Publications',
+        makiphone: {
+          title: 'Makiphone: a React Native Application using WebRTC and Asterisk',
+          authors: 'Matheo Rodrigues Bonucia, Joyce Aline de Oliveira Marins, Fabrício B. Carvalho',
+          venue: 'XIII Regional School of Informatics of Mato Grosso (ERI-MT 2024)',
+          description: 'WebRTC is an emerging technology that uses peer-to-peer (P2P) connections in real-time for media transmission. This article presents Makiphone, a mobile application developed in React Native, which integrates WebRTC with the SIP protocol for audio and video calls. The solution uses an Asterisk server to manage media, deployed on an Amazon Web Services (AWS) platform, enabling a scalable, stable, and intuitive infrastructure.',
+          readArticle: 'Read Full Article',
+          publisher: 'Brazilian Computer Society (SBC)',
+          doi: 'DOI: 10.5753/eri-mt.2024.245928'
+        }
+      },
       achievements: {
         title: 'Key Achievements',
         items: [
@@ -228,6 +240,18 @@ export default function Home() {
         ai: {
           title: 'Integração de IA',
           description: 'Soluções de IA corporativa usando Semantic Kernel e modelos de linguagem para automação inteligente e análise de dados.'
+        }
+      },
+      publications: {
+        title: 'Publicações Acadêmicas',
+        makiphone: {
+          title: 'Makiphone: um Aplicativo em React Native com o uso de WebRTC e Asterisk',
+          authors: 'Matheo Rodrigues Bonucia, Joyce Aline de Oliveira Marins, Fabrício B. Carvalho',
+          venue: 'XIII Escola Regional de Informática de Mato Grosso (ERI-MT 2024)',
+          description: 'WebRTC é uma tecnologia emergente que utiliza conexões peer-to-peer (P2P) em tempo real para transmissão de mídia. Este artigo apresenta o Makiphone, um aplicativo móvel desenvolvido em React Native, que integra WebRTC com o protocolo SIP para chamadas de áudio e vídeo. A solução utiliza um servidor Asterisk para gerenciar as mídias, implantado em uma plataforma Amazon Web Services (AWS), o que permite uma infraestrutura escalável, estável e intuitiva.',
+          readArticle: 'Ler Artigo Completo',
+          publisher: 'Sociedade Brasileira de Computação (SBC)',
+          doi: 'DOI: 10.5753/eri-mt.2024.245928'
         }
       },
       achievements: {
@@ -582,6 +606,75 @@ export default function Home() {
                 <span className="bg-purple-500/20 px-3 py-1 rounded-full text-xs">OpenAI</span>
                 <span className="bg-purple-500/20 px-3 py-1 rounded-full text-xs">.NET</span>
                 <span className="bg-purple-500/20 px-3 py-1 rounded-full text-xs">{language === 'en' ? 'AI' : 'IA'}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Publications Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 gradient-text">{content.publications.title}</h2>
+
+          <div className="glass rounded-3xl p-8 md:p-12 hover-lift border-2 border-purple-500/30 relative overflow-hidden">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-40 h-40 bg-pink-500/10 rounded-full blur-3xl"></div>
+
+            <div className="relative z-10">
+              {/* Academic Icon */}
+              <div className="flex justify-center mb-6">
+                <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-4 rounded-2xl animate-glow">
+                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 className="text-2xl sm:text-3xl font-bold text-center mb-4 gradient-text">
+                {content.publications.makiphone.title}
+              </h3>
+
+              <p className="text-center text-gray-400 mb-2 text-sm">
+                {content.publications.makiphone.authors}
+              </p>
+
+              <p className="text-center text-purple-400 font-semibold mb-6">
+                {content.publications.makiphone.venue}
+              </p>
+
+              <p className="text-gray-300 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
+                {content.publications.makiphone.description}
+              </p>
+
+              <div className="flex flex-col items-center gap-4 mb-6">
+                <div className="flex items-center gap-2 text-sm text-gray-400">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+                  </svg>
+                  <span>{content.publications.makiphone.publisher}</span>
+                </div>
+                <div className="text-sm text-gray-500 font-mono">
+                  {content.publications.makiphone.doi}
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <a
+                  href="https://sol.sbc.org.br/index.php/eri-mt/article/view/31185"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-purple-500 via-purple-600 to-pink-500 px-8 py-4 rounded-xl hover-lift font-bold text-lg flex items-center gap-3 shadow-lg shadow-purple-500/50"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  {content.publications.makiphone.readArticle}
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
