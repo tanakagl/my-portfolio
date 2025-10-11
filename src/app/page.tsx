@@ -440,7 +440,7 @@ export default function Home() {
                   <li key={index} className="flex items-start gap-2">
                     <span className="text-purple-400 mt-1">▹</span>
                     {index === 0 ? (
-                      <span>{language === 'en' ? 'Contributing to the development and maintenance of the organization\'s website at' : 'Contribuindo para o desenvolvimento e manutenção do site da organização em'} <a href="https://github.com/associacaosilo/silo.org.br" target="_blank" rel="noopener noreferrer" className="text-purple-400 font-semibold hover:text-purple-300 underline">silo.org.br</a></span>
+                      <span>{language === 'en' ? 'Contributing to the development and maintenance of the organization\'s website at' : 'Contribuindo para o desenvolvimento e manutenção do site da organização em'} <a href="https://silo.org.br" target="_blank" rel="noopener noreferrer" className="text-purple-400 font-semibold hover:text-purple-300 underline">silo.org.br</a></span>
                     ) : (
                       <span>{item}</span>
                     )}
